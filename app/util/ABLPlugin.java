@@ -77,7 +77,7 @@ public class ABLPlugin extends PlayPlugin {
 		// realistic way to determine which classes are related to the logic classes,
 		// so we load them all.
 		ClassLoaderManager.getInstance().defineClass(cls.name, cls.enhancedByteCode);
-		Logger.info("ABL plugin - enhance: passed enhanced bytecode to ABL for class : " + cls.name);
+		Logger.debug("ABL plugin - enhance: passed enhanced bytecode to ABL for class : " + cls.name);
 		classesLoaded.add(cls.name);		
 	}
 }
