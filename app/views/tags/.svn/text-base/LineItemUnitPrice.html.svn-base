@@ -1,0 +1,5 @@
+<input type="text" size="8" style="text-align: right; font-size:10pt;"
+			value="$${util.NumberFormat.formatMoney(_lineItem.productPrice) }" 
+			onchange="if ( ! isNumber(this.value)) {alert('Invalid number'); return false;} update(${_customer.id}, 'verb=update&type=LineItem&id=${_lineItem.id}&att=unitPrice&value=' + escape(this.value))"
+			/>
+			

@@ -1,0 +1,32 @@
+# Application dependencies
+#
+# ABL requires javassist 3.12 or later, but 3.12 does not work with Play.
+# 3.15 seems to work properly.
+
+require:
+    - play:
+          exclude:
+              - javassist -> *
+              - org.javassist -> *
+              - org.hibernate.javax.persistence -> *
+              - org.hibernate -> *
+
+    - com.autobizlogic.abl -> autobizlogic 2.0.1 :
+          exclude:
+              - javassist -> *
+              - org.javassist -> *
+              - org.hibernate.javax.persistence -> *
+              - org.hibernate -> hibernate-commons-annotations
+
+    - org.javassist -> javassist 3.15.0-GA :
+        force: true
+        
+    - org.apache.commons -> commons-jexl 2.1
+
+repositories:
+    
+    - abl:
+        type:       iBiblio
+        root:   "http://resources.automatedbusinesslogic.com/maven2/"
+        contains:
+            - com.autobizlogic.abl -> *

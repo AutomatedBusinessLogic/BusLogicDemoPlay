@@ -1,0 +1,135 @@
+###############################################################################
+# The basic data set for the BusLogicDemo project
+#
+# Note that the data computed by the business rules is left unset
+# because it will be set by the ABL engine when the load is committed.
+
+#####################################
+### Customer
+
+Customer(alpha):
+ name: Alpha and Sons
+ creditLimit: 900
+
+Customer(bravo):
+ name: Bravo Hardware
+ creditLimit: 5000
+
+Customer(charlie):
+ name: Charlie's Construction
+ creditLimit: 1500
+
+Customer(delta):
+ name: Delta Engineering
+ creditLimit: 0
+
+#####################################
+### Product
+
+Product(hammer):
+ name: Hammer
+ price: 10
+
+Product(shovel):
+ name: Shovel
+ price: 25
+
+Product(drill):
+ name: Drill
+ price: 315
+
+#####################################
+### PurchaseOrder
+
+PurchaseOrder(po1):
+ paid: 0
+ notes: This is a small order
+ customer: alpha
+
+PurchaseOrder(po2):
+ paid: 1
+ notes: 
+ customer: bravo
+
+PurchaseOrder(po3):
+ paid: 0
+ notes: Please rush this order
+ customer: bravo
+
+PurchaseOrder(po4):
+ paid: 0
+ notes: Deliver by overnight with signature required
+ customer: charlie
+
+PurchaseOrder(po5):
+ paid: 0
+ notes: 
+ customer: charlie
+
+PurchaseOrder(po6):
+ paid: 0
+ notes: Pack with care - fragile merchandise
+ customer: alpha
+
+#####################################
+### LineItem
+
+LineItem(li1):
+ product: hammer
+ purchaseOrder: po1
+ qtyOrdered: 1
+
+LineItem(li2):
+ product: hammer
+ purchaseOrder: po2
+ qtyOrdered: 2
+
+LineItem(li3):
+ product: shovel
+ purchaseOrder: po2
+ qtyOrdered: 1
+
+LineItem(li4):
+ product: drill
+ purchaseOrder: po2
+ qtyOrdered: 2
+
+LineItem(li5):
+ product: hammer
+ purchaseOrder: po3
+ qtyOrdered: 1
+
+LineItem(li6):
+ product: shovel
+ purchaseOrder: po3
+ qtyOrdered: 2
+
+LineItem(li7):
+ product: hammer
+ purchaseOrder: po4
+ qtyOrdered: 1
+
+LineItem(li8):
+ product: shovel
+ purchaseOrder: po4
+ qtyOrdered: 3
+
+LineItem(li9):
+ product: hammer
+ purchaseOrder: po5
+ qtyOrdered: 1
+
+LineItem(li10):
+ product: shovel
+ purchaseOrder: po5
+ qtyOrdered: 5
+
+LineItem(li11):
+ product: shovel
+ purchaseOrder: po6
+ qtyOrdered: 2
+
+LineItem(li12):
+ product: shovel
+ purchaseOrder: po1
+ qtyOrdered: 1

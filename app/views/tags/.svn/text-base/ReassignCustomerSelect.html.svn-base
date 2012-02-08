@@ -1,0 +1,7 @@
+<select name="custName" onchange="update(${_currentCustomer.id}, 'verb=update&type=Order&id=${ _order.id }&att=customer&value=' + this.options[this.selectedIndex].value)"
+	style="font-size: 10pt;">
+	<option selected>- select a customer -
+	#{list items:_customers, as:'cust'}
+		<option value="${cust.id}">${cust.name}
+	#{/list}
+</select>

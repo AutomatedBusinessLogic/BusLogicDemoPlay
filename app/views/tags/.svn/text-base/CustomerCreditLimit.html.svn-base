@@ -1,0 +1,4 @@
+<input type="text" size="8" style="text-align: right; font-size:10pt;"
+			value="${util.NumberFormat.formatMoney(_customer.creditLimit)}" 
+			onchange="if ( ! isNumber(this.value)) {alert('Invalid number'); return false;} update(null, 'verb=update&type=Customer&id=${_customer.id}&att=creditLimit&value=' + escape(this.value))"
+			/>

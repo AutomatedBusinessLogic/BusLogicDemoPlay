@@ -1,0 +1,24 @@
+<div style="border: 1px solid #888888; background-color: #CCCCFF; padding: 5px; box-shadow: 10px 5px 5px #777777;" id="ChangeSummaryDiv">
+	<h4 style="text-align: center;">What just happened?</h4>
+	%{ listener = util.DemoEventListener.instance }%
+	<table style="border: 1px solid #777777; margin: 5px;">
+	#{if listener.events.isEmpty()}
+	<tr><td>No business logic to display (yet).</td></tr>
+	#{/if}
+	#{if !listener.events.isEmpty()}
+	#{list items:listener.events, as:'event'}
+	%{
+		eventDesc = util.EventFormatter.formatEvent(event);
+		if (eventDesc == null)
+			continue;
+	}%
+	<tr>
+		<td style="border: 1px solid #777777;">${ eventDesc[0] }</td>
+		<td style="border: 1px solid #777777;">${ eventDesc[1] }</td>
+	</tr>
+	#{/list}
+	#{/if}
+
+	</table>
+</div>
+%{ listener.resetEvents() }%
