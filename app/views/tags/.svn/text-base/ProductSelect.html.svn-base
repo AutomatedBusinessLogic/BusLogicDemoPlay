@@ -1,6 +1,0 @@
-<select name="custName" onchange="update(${_customer.id}, 'verb=update&type=LineItem&id=${ _lineItem.id }&att=product&value=' + this.options[this.selectedIndex].value)"
-	style="font-size: 10pt;">
-	#{list items:_products, as:'prod'}
-		<option #{if prod.id == _lineItem.product.id}selected#{/if} value="${prod.id}">${prod.name}
-	#{/list}
-</select>

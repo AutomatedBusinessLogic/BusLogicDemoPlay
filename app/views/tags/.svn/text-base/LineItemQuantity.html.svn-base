@@ -1,4 +1,0 @@
-<input type="text" size="5" style="text-align: right; font-size:10pt;"
-			value="${_lineItem.qtyOrdered}" 
-			onchange="if ( ! isNumber(this.value)) {alert('Invalid number:' + this.value); this.focus(); return false;} update(${_customer.id}, 'verb=update&type=LineItem&id=${_lineItem.id}&att=quantity&value=' + escape(this.value))"
-			/>
