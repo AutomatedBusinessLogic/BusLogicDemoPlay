@@ -11,12 +11,12 @@ require:
               - org.hibernate.javax.persistence -> *
               - org.hibernate -> *
 
-#    - com.autobizlogic.abl -> autobizlogic 2.0.1 :
-#          exclude:
-#              - javassist -> *
-#              - org.javassist -> *
-#              - org.hibernate.javax.persistence -> *
-#              - org.hibernate -> hibernate-commons-annotations
+    - com.autobizlogic.abl -> autobizlogic 2.0.2 :
+          exclude:
+              - javassist -> *
+              - org.javassist -> *
+              - org.hibernate.javax.persistence -> *
+              - org.hibernate -> hibernate-commons-annotations
 
     - org.javassist -> javassist 3.15.0-GA :
         force: true
