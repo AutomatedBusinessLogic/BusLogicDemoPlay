@@ -37,14 +37,13 @@ public class ABLPlugin extends PlayPlugin {
 	 */
 	@Override
 	public void onApplicationStart() {
-		if (classesLoaded.size() > 0) // We can get called multiple times
-			return;
-		
 		Logger.info("ABLPlugin started");
 		List<ApplicationClass> classes = Play.classes.all();
 		for (ApplicationClass cls: classes) {
 			// We don't need to load the model classes
 			if (cls.javaClass != null && JPABase.class.isAssignableFrom(cls.javaClass))
+				continue;
+			if (classesLoaded.contains(cls.name))
 				continue;
 			if (cls.enhancedByteCode != null)
 				ClassLoaderManager.getInstance().defineClass(cls.name, cls.enhancedByteCode);
@@ -78,7 +77,7 @@ public class ABLPlugin extends PlayPlugin {
 		// realistic way to determine which classes are related to the logic classes,
 		// so we load them all.
 		ClassLoaderManager.getInstance().defineClass(cls.name, cls.enhancedByteCode);
-		Logger.debug("ABL plugin - enhance: passed enhanced bytecode to ABL for class : " + cls.name);
+		Logger.info("ABL plugin - enhance: passed enhanced bytecode to ABL for class : " + cls.name);
 		classesLoaded.add(cls.name);		
 	}
 }
